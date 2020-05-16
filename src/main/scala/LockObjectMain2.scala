@@ -1,9 +1,8 @@
 import java.security.MessageDigest
 
 object LockObjectMain2 extends App {
-  for (i <- 1 to 100) {
+  for (i <- 1 to 100)
     new Thread(() => println(HashDigestProvider2.digest("Hello!"))).start()
-  }
 }
 
 object HashDigestProvider2 {

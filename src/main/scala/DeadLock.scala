@@ -10,9 +10,7 @@ object DeadLock extends App {
   val threadB = new Thread(
     () =>
       synchronized {
-        while (now == 0L) {
-          Thread.sleep(1000)
-        }
+        while (now == 0L) Thread.sleep(1000)
         print(now)
       }
   )

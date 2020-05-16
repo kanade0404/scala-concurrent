@@ -13,9 +13,7 @@ object MemoryVisibility extends App {
   private[this] def getNumber: Int = synchronized { number }
   private[this] def getReady: Boolean = synchronized { ready }
   new Thread(() => {
-    while (!ready) {
-      Thread.`yield`()
-    }
+    while (!ready) Thread.`yield`()
     println(number)
   }).start()
   number = 2525

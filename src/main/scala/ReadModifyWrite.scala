@@ -1,9 +1,8 @@
 import java.util.concurrent.atomic.AtomicReference
 
 object ReadModifyWrite extends App {
-  for (i <- 1 to 100) {
+  for (i <- 1 to 100)
     new Thread(() => println(FactorialProvider.next)).start()
-  }
 }
 object FactorialProvider {
   private[this] val lastNumber = new AtomicReference[BigInt](BigInt(0))

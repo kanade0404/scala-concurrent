@@ -3,9 +3,8 @@ import java.util.concurrent.atomic.AtomicReference
 import java.util.function.UnaryOperator
 
 object LongLock extends App {
-  for (i <- 1 to 100) {
+  for (i <- 1 to 100)
     new Thread(() => println(NumAndCurrentDataProvider.next)).start()
-  }
 }
 object NumAndCurrentDataProvider {
   private[this] val lastNumber = new AtomicReference[BigInt](BigInt(0))

@@ -4,7 +4,6 @@ object ThreadRisk extends App {
     counter = counter + 1
     counter
   }
-  for (i <- 1 to 10) {
+  for (i <- 1 to 10)
     new Thread(() => for (j <- 1 to 100000) println(next())).start()
-  }
 }

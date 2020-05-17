@@ -5,14 +5,14 @@ object DeadLock extends App {
       synchronized {
         Thread.sleep(1000)
         now = System.currentTimeMillis()
-      }
+    }
   )
   val threadB = new Thread(
     () =>
       synchronized {
         while (now == 0L) Thread.sleep(1000)
         print(now)
-      }
+    }
   )
   threadA.start()
   threadB.start()
